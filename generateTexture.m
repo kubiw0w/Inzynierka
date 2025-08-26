@@ -23,6 +23,18 @@ function generateTexture(app)
             tex = perlinNoiseRadial(width, height, 10);
         case 'Perlin Noise + sinusoidalna deformacja'
             tex = perlinNoiseSinDeform(width, height, 10, 5, 10);
+        case 'Worley Noise'
+            tex = worleyNoise(width, height, 10);
+        case 'fBM (Fractal Brownian Motion)'
+            tex = fBM(width, height, 6, 0.5, 2.0, 4);
+        case 'Gaussian'
+            tex = gaussianNoise(width, height, 0, 1);
+        % case 'Fractal Plasma'
+        %     tex = fractalPlasma(513, 0.7);
+        case 'Checkerboard'
+            tex = checkerboardTex(width, height, 8);
+        case 'Voronoi Diagram'
+            tex = voronoiTex(width, height, 50);
         otherwise
             tex = rand(height, width); % fallback
     end
